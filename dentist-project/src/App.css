@@ -195,8 +195,8 @@ html {
   display: flex;
   align-items: center;
   background: white;
-  padding-top: 90px;
-  padding-bottom: 60px;
+  padding-top: 80px;
+  padding-bottom: 40px;
 }
 
 .hero-container-flex {
@@ -233,17 +233,64 @@ html {
 }
 
 .hero-description {
-  font-size: 18px;
+  font-size: 17px;
   color: var(--text-muted);
   line-height: 1.6;
-  margin-bottom: 40px;
+  margin-bottom: 28px;
+}
+
+/* Hero Trust Stats */
+.hero-trust-stats {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 32px;
+  padding: 18px 24px;
+  background: var(--bg-soft);
+  border-radius: 18px;
+  border: 1px solid var(--border);
+}
+
+.trust-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.trust-num {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--primary);
+  letter-spacing: -0.5px;
+}
+
+.trust-label {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.trust-divider {
+  width: 1px;
+  height: 36px;
+  background: var(--border);
+}
+
+/* Hero CTA Row */
+.hero-cta-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
 }
 
 .contact-us-btn {
   background: var(--accent);
   border: none;
-  font-size: 16px;
-  padding: 15px 35px;
+  font-size: 15px;
+  padding: 14px 30px;
   color: white;
 }
 
@@ -261,10 +308,9 @@ html {
 }
 
 .expert-doctors-badge {
-  margin-top: 50px;
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 12px;
 }
 
 .avatar-stack {
@@ -1032,6 +1078,7 @@ html {
 /* Team Section */
 .team-section {
   background: var(--bg-soft);
+  padding: 10px 0;
 }
 
 .team-grid {
@@ -1130,7 +1177,7 @@ html {
 .footer {
   background: var(--primary);
   color: white;
-  padding: 100px 0 50px;
+  padding: 65px 0 40px;
 }
 
 .footer-grid {
@@ -1314,7 +1361,7 @@ html {
     position: fixed;
     inset: 0;
     top: 70px;
-    background: rgba(0,0,0,0.3);
+    background: rgba(0, 0, 0, 0.3);
     z-index: 998;
   }
 
@@ -1413,12 +1460,22 @@ html {
   }
 
   .section-padding {
-    padding: 60px 0;
+    padding: 65px 0;
   }
 
   .hero-section {
     padding-top: 100px;
     min-height: auto;
+  }
+
+  .hero-trust-stats {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .hero-cta-row {
+    flex-direction: column;
+    gap: 15px;
   }
 
   .hero-content-left h1 {
@@ -1636,4 +1693,31 @@ html {
     flex-direction: column;
     gap: 10px;
   }
+}
+
+.team-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.team-header p {
+  color: #00bfa6;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.team-header h2 {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.center-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.center-header .section-title h2 {
+  text-align: center;
 }

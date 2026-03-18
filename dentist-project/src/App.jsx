@@ -82,34 +82,52 @@ function App() {
         <div className="container hero-container-flex">
           <div className="hero-content-left">
             <div className="hero-badge">
-              <span className="icon">✈️</span>
-              <span className="badge-text">True 24/7 Care When It Counts</span>
+              <span className="icon">🏆</span>
+              <span className="badge-text">Australia's Most Trusted Dental Clinic</span>
             </div>
-            <h1>A calmer dental<br />visit starts here.</h1>
+            <h1>Your Smile Deserves<br />the Best in Australia.</h1>
             <p className="hero-description">
-              Modern dentistry designed around your comfort. From routine checkups to advanced care, we make dental visits simple, clear, and stress-free.
+              Rated #1 across Sydney, Melbourne & Brisbane — our award-winning dental team delivers world-class care with cutting-edge technology. Over <strong>50,000 happy patients</strong> trust us for everything from routine checkups to full smile transformations.
             </p>
-            
-            <button className="book-btn contact-us-btn" onClick={() => document.getElementById('contact').scrollIntoView()}>
-              Contact Us
-              <span className="arrow-circle">↗</span>
-            </button>
 
-            <div className="expert-doctors-badge">
-              <div className="avatar-stack">
-                <img src="https://i.pravatar.cc/150?u=1" alt="doc" />
-                <img src="https://i.pravatar.cc/150?u=2" alt="doc" />
-                <img src="https://i.pravatar.cc/150?u=3" alt="doc" />
-                <div className="more-count">15+</div>
+            <div className="hero-trust-stats">
+              <div className="trust-stat">
+                <span className="trust-num">50K+</span>
+                <span className="trust-label">Happy Patients</span>
               </div>
-              <p>Expert Dentists for you</p>
+              <div className="trust-divider"></div>
+              <div className="trust-stat">
+                <span className="trust-num">15+</span>
+                <span className="trust-label">Years of Excellence</span>
+              </div>
+              <div className="trust-divider"></div>
+              <div className="trust-stat">
+                <span className="trust-num">4.9★</span>
+                <span className="trust-label">Google Rating</span>
+              </div>
+            </div>
+
+            <div className="hero-cta-row">
+              <button className="book-btn contact-us-btn" onClick={() => document.getElementById('contact').scrollIntoView()}>
+                Book Free Consultation
+                <span className="arrow-circle">↗</span>
+              </button>
+              <div className="expert-doctors-badge">
+                <div className="avatar-stack">
+                  <img src="https://i.pravatar.cc/150?u=1" alt="doc" />
+                  <img src="https://i.pravatar.cc/150?u=2" alt="doc" />
+                  <img src="https://i.pravatar.cc/150?u=3" alt="doc" />
+                  <div className="more-count">15+</div>
+                </div>
+                <p>Expert Dentists for you</p>
+              </div>
             </div>
           </div>
 
           <div className="hero-content-right">
             <div className="hero-image-wrapper">
               <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=2024&auto=format&fit=crop" alt="Dental Patient" className="hero-main-img" />
-              
+
               <div className="status-badge badge-1">
                 <span className="badge-icon">🦷</span>
                 <span className="badge-name">Teeth Cleaning</span>
@@ -134,7 +152,7 @@ function App() {
       <section id="services" className="services-section section-padding">
         <div className="container">
           <div className="section-header">
-            <span className="sur-title">Our Features /</span>
+            <span className="sur-title"> dental services /</span>
             <div className="section-title">
               <h2>DISCOVER OUR SIGNATURE<br />DENTAL SERVICES</h2>
               <p style={{ maxWidth: '400px', fontSize: '14px', color: 'var(--text-muted)' }}>
@@ -155,7 +173,7 @@ function App() {
                 <img src={service.img} alt={service.title} className="service-img" />
                 <div className="service-info">
                   <h3>{service.title}</h3>
-                  <p style={{fontSize: '13px', opacity: 0.8}}>{service.desc}</p>
+                  <p style={{ fontSize: '13px', opacity: 0.8 }}>{service.desc}</p>
                 </div>
               </div>
             ))}
@@ -217,11 +235,11 @@ function App() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="why-us-section section-padding" style={{background: 'var(--primary)', color: 'white'}}>
+      <section className="why-us-section section-padding" style={{ background: 'var(--primary)', color: 'white' }}>
         <div className="container">
-          <div className="section-header" style={{textAlign: 'center', marginBottom: '60px'}}>
-            <span className="sur-title" style={{color: 'var(--accent)'}}>Why Us /</span>
-            <h2 style={{color: 'white'}}>WHAT SETS US APART</h2>
+          <div className="section-header" style={{ textAlign: 'center', marginBottom: '60px' }}>
+            <span className="sur-title" style={{ color: 'var(--accent)' }}>Why Us /</span>
+            <h2 style={{ color: 'white' }}>WHAT SETS US APART</h2>
           </div>
           <div className="why-grid">
             {[
@@ -232,8 +250,8 @@ function App() {
             ].map((item, i) => (
               <div key={i} className="why-card">
                 <div className="why-icon">{item.icon}</div>
-                <h3 style={{color: 'white', marginBottom: '10px'}}>{item.title}</h3>
-                <p style={{color: 'rgba(255,255,255,0.7)', fontSize: '14px'}}>{item.desc}</p>
+                <h3 style={{ color: 'white', marginBottom: '10px' }}>{item.title}</h3>
+                <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px' }}>{item.desc}</p>
               </div>
             ))}
           </div>
@@ -245,21 +263,13 @@ function App() {
         <div className="container">
           <div className="stats-container">
             <div className="stat-item">
-              <h2>50K</h2>
-              <p>SMILES<br />TRANSFORMED</p>
-            </div>
-            <div className="stat-item">
-              <h2>4.9</h2>
-              <p>CUSTOMER<br />RATING</p>
             </div>
           </div>
 
-          <div className="section-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap' }}>
-            <div>
-              <span className="sur-title">Meet /</span>
-              <div className="section-title">
-                <h2>THE PROFESSIONALS<br />BEHIND YOUR SMILE</h2>
-              </div>
+          <div className="section-header center-header">
+            <span className="sur-title">Meet /</span>
+            <div className="section-title">
+              <h2>THE PROFESSIONALS<br />BEHIND YOUR SMILE</h2>
             </div>
           </div>
 
@@ -296,7 +306,7 @@ function App() {
             <h2 style={{ fontSize: '25px' }}>WHAT OUR PATIENTS SAY</h2>
           </div>
         </div>
-        
+
         <div className="marquee-container">
           <div className="marquee">
             {[...testimonials, ...testimonials].map((t, i) => (
@@ -352,7 +362,7 @@ function App() {
               <h2>{modalContent.title}</h2>
               <p>{modalContent.content}</p>
               {modalContent.title === 'Book a Consultation' && (
-                <button className="book-btn" style={{marginTop: '20px', width: '100%', justifyContent: 'center'}} onClick={closeModal}>Got It</button>
+                <button className="book-btn" style={{ marginTop: '20px', width: '100%', justifyContent: 'center' }} onClick={closeModal}>Got It</button>
               )}
             </div>
           </div>
@@ -483,7 +493,7 @@ function App() {
               </ul>
             </div>
           </div>
-          
+
           <div className="footer-bottom">
             <p>&copy; 2023 Dental Care Clinic. All rights reserved.</p>
             <div className="footer-legal">

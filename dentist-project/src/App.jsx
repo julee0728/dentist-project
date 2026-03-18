@@ -261,10 +261,6 @@ function App() {
       {/* Team Section */}
       <section id="team" className="team-section section-padding">
         <div className="container">
-          <div className="stats-container">
-            <div className="stat-item">
-            </div>
-          </div>
 
           <div className="section-header center-header">
             <span className="sur-title">Meet /</span>

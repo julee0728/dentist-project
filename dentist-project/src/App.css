@@ -1081,6 +1081,7 @@ html {
 .team-section {
   background: var(--bg-soft);
   padding: 10px 0;
+  border-bottom: 1px solid red;
 }
 
 .team-grid {
@@ -1722,4 +1723,94 @@ html {
 
 .center-header .section-title h2 {
   text-align: center;
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+  /* container padding */
+  .container {
+    padding: 0 16px;
+  }
+
+  /* section spacing */
+  .section-padding {
+    padding: 30px 0;
+  }
+
+  /* headings center */
+  .section-header,
+  .center-header {
+    text-align: center;
+    align-items: center;
+  }
+
+  /* grids → single column */
+  .team-grid,
+  .services-grid,
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* contact layout */
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* contact items */
+  .contact-details {
+    gap: 15px;
+  }
+
+  /* font sizes adjust */
+  h2 {
+    font-size: 24px;
+    line-height: 1.3;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  /* buttons */
+  .btn,
+  .book-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Contact Details Alignment Fix */
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* har item row me hoga */
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* icon fix size */
+.contact-item .icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f5f5;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+/* text alignment */
+.contact-item div {
+  text-align: left;
 }

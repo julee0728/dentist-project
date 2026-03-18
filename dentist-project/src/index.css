@@ -14,7 +14,7 @@
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --glass: rgba(255, 255, 255, 0.7);
   --glass-border: rgba(255, 255, 255, 0.2);
-  
+
   --font-main: 'Outfit', sans-serif;
 }
 
@@ -37,7 +37,10 @@ body {
   min-height: 100vh;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-weight: 700;
   line-height: 1.2;
   color: var(--primary);
@@ -73,3 +76,14 @@ button {
   }
 }
 
+.center-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.center-header h2,
+.center-header p {
+  text-align: center;
+}

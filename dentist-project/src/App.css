@@ -999,6 +999,7 @@ html {
 /* Contact Section */
 .contact-section {
   background: var(--bg-soft);
+  padding: 40px 0;
 }
 
 .contact-container {
@@ -1006,6 +1007,7 @@ html {
   grid-template-columns: 1fr 1fr;
   gap: 80px;
   align-items: center;
+  padding: 40px 0;
 }
 
 .contact-details {

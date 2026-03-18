@@ -372,10 +372,15 @@ function App() {
       {/* Contact Section */}
       <section id="contact" className="contact-section section-padding">
         <div className="container contact-container">
-          <div className="contact-info">
+          <div className="contact-info center-header">
             <span className="sur-title">Get in Touch /</span>
-            <h2>READY TO TRANSORM<br />YOUR <span className="text-accent">SMILE</span>?</h2>
-            <p>Our friendly team is here to answer all your questions and help you schedule your first visit.</p>
+            <h2>
+              READY TO TRANSFORM<br />
+              YOUR <span className="text-accent">SMILE</span>?
+            </h2>
+            <p>
+              Our friendly team is here to answer all your questions and help you schedule your first visit.
+            </p>
             <div className="contact-details">
               <div className="contact-item">
                 <span className="icon">📍</span>

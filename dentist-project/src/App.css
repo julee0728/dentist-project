@@ -43,7 +43,7 @@ html {
 
 /* Header Styles */
 .header {
-  height: 90px;
+  height: 70px;
   display: flex;
   align-items: center;
   position: fixed;
@@ -119,6 +119,49 @@ html {
   width: 100%;
 }
 
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 1100;
+}
+
+.hamburger-line {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--primary);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.hamburger-line.open:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger-line.open:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.hamburger-line.open:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.mobile-menu-overlay {
+  display: none;
+}
+
 .book-btn {
   background: var(--primary);
   color: white;
@@ -152,7 +195,7 @@ html {
   display: flex;
   align-items: center;
   background: white;
-  padding-top: 120px;
+  padding-top: 90px;
   padding-bottom: 60px;
 }
 
@@ -1217,12 +1260,67 @@ html {
     padding: 0 30px;
   }
 
-  .nav-links {
+  /* Show hamburger, hide desktop nav & book btn */
+  .hamburger {
+    display: flex;
+  }
+
+  .desktop-only {
     display: none;
   }
 
+  /* Mobile nav drawer */
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: white;
+    border-bottom: 1px solid var(--border);
+    box-shadow: var(--shadow-lg);
+    z-index: 999;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.35s ease;
+  }
+
+  .nav-links.nav-open {
+    max-height: 500px;
+    padding: 10px 0 20px;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 14px 30px;
+    font-size: 17px;
+    border-bottom: 1px solid var(--border);
+    opacity: 1;
+  }
+
+  .nav-links a:last-child {
+    border-bottom: none;
+  }
+
+  .nav-links a::after {
+    display: none;
+  }
+
+  .mobile-menu-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    top: 70px;
+    background: rgba(0,0,0,0.3);
+    z-index: 998;
+  }
+
   .hero-section {
-    padding-top: 140px;
+    padding-top: 110px;
+    padding-bottom: 60px;
   }
 
   .hero-container-flex {
@@ -1237,7 +1335,7 @@ html {
   }
 
   .hero-content-left h1 {
-    font-size: 20px;
+    font-size: 36px;
   }
 
   .hero-description {
@@ -1263,6 +1361,7 @@ html {
   .about-images {
     order: 2;
     margin-top: 60px;
+    min-height: 350px;
   }
 
   .about-content {
@@ -1276,6 +1375,7 @@ html {
   .about-actions {
     justify-content: center;
     flex-wrap: wrap;
+    gap: 15px;
   }
 
   .team-grid {
@@ -1296,15 +1396,37 @@ html {
     gap: 20px;
     text-align: center;
   }
+
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+
   .section-padding {
-    padding: 80px 0;
+    padding: 60px 0;
+  }
+
+  .hero-section {
+    padding-top: 100px;
+    min-height: auto;
   }
 
   .hero-content-left h1 {
-    font-size: 20px;
+    font-size: 28px;
+  }
+
+  .hero-description {
+    font-size: 16px;
   }
 
   .services-grid,
@@ -1316,35 +1438,99 @@ html {
     grid-template-columns: 1fr;
   }
 
+  .service-card {
+    height: 300px;
+  }
+
   .section-title {
-    font-size: 32px;
+    font-size: 20px;
     text-align: center;
     justify-content: center;
+    flex-direction: column;
+    gap: 10px;
   }
 
   .section-header {
     text-align: center;
+    margin-bottom: 40px;
   }
 
   .stats-container {
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
     align-items: center;
     text-align: center;
+    justify-content: center;
   }
 
   .modal-card {
-    padding: 30px;
-    border-radius: 0;
-    height: 100%;
-    max-height: 100%;
-    max-width: 100%;
+    padding: 25px 20px;
     border-radius: 20px;
+    max-width: 95vw;
+  }
+
+  /* Testimonials marquee on mobile — show as vertical stack */
+  .marquee-container {
+    overflow: hidden;
+  }
+
+  .marquee {
+    animation: none;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 20px;
+    white-space: normal;
   }
 
   .feedback-card {
     min-width: 100%;
     padding: 30px;
+    white-space: normal;
+  }
+
+  .about-img-sub {
+    display: none;
+  }
+
+  .about-img-main {
+    width: 100%;
+    transform: none;
+  }
+
+  .experience-badge {
+    top: auto;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .about-images {
+    min-height: 280px;
+    margin-bottom: 30px;
+  }
+
+  .working-hours-box {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .about-actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .about-actions .book-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .contact-form-card {
+    padding: 30px 20px;
+  }
+
+  .contact-container {
+    gap: 40px;
   }
 
   .footer-brand {
@@ -1370,19 +1556,84 @@ html {
   .footer-legal a {
     margin: 0 10px;
   }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .team-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .blog-title {
+    height: auto;
+    min-height: 50px;
+  }
 }
 
 @media (max-width: 480px) {
-  .hero-content-left h1 {
+  .container {
+    padding: 0 16px;
+  }
+
+  .logo {
     font-size: 20px;
   }
 
+  .hero-content-left h1 {
+    font-size: 26px;
+  }
+
   .hero-description {
-    font-size: 16px;
+    font-size: 15px;
+  }
+
+  .hero-badge {
+    font-size: 12px;
+    padding: 6px 14px;
   }
 
   .book-btn {
     width: 100%;
-    padding: 15px 20px;
+    justify-content: center;
+    padding: 14px 20px;
+  }
+
+  .contact-us-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .why-card {
+    padding: 25px 20px;
+  }
+
+  .stat-item {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  .section-header {
+    margin-bottom: 30px;
+  }
+
+  .footer {
+    padding: 60px 0 30px;
+  }
+
+  .footer-grid {
+    gap: 35px;
+    margin-bottom: 40px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
   }
 }

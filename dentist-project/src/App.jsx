@@ -5,6 +5,7 @@ function App() {
   const [activeTab, setActiveTab] = useState('Dental Checkups');
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [modalContent, setModalContent] = useState(null);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const testimonials = [
     { name: "Sarah Johnson", feedback: "Exceptional care! The team was so gentle and professional. Highly recommend for anyone with dental anxiety.", rating: 5, avatar: "https://i.pravatar.cc/150?u=sarah" },
@@ -34,6 +35,10 @@ function App() {
     setTimeout(() => setFormSubmitted(false), 5000);
   };
 
+  const handleNavClick = () => {
+    setMenuOpen(false);
+  };
+
   return (
     <div className="landing-page">
       {/* Header */}
@@ -43,20 +48,33 @@ function App() {
             <div className="logo-icon">🦷</div>
             Dental
           </div>
-          <nav className="nav-links">
-            <a href="#home">Home</a>
-            <a href="#services">Services</a>
-            <a href="#about">About</a>
-            <a href="#team">Team</a>
-            <a href="#testimonials">Reviews</a>
-            <a href="#blog">Blog</a>
-            <a href="#contact">Contact</a>
+          <nav className={`nav-links${menuOpen ? ' nav-open' : ''}`}>
+            <a href="#home" onClick={handleNavClick}>Home</a>
+            <a href="#services" onClick={handleNavClick}>Services</a>
+            <a href="#about" onClick={handleNavClick}>About</a>
+            <a href="#team" onClick={handleNavClick}>Team</a>
+            <a href="#testimonials" onClick={handleNavClick}>Reviews</a>
+            <a href="#blog" onClick={handleNavClick}>Blog</a>
+            <a href="#contact" onClick={handleNavClick}>Contact</a>
           </nav>
-          <button className="book-btn" onClick={() => openModal('Book a Consultation', 'Fill out the form below or call us at +1 (555) 000-1111 to schedule your appointment.')}>
+          <button className="book-btn desktop-only" onClick={() => openModal('Book a Consultation', 'Fill out the form below or call us at +1 (555) 000-1111 to schedule your appointment.')}>
             Book a call
             <span>→</span>
           </button>
+          <button
+            className="hamburger"
+            aria-label="Toggle navigation"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            <span className={`hamburger-line${menuOpen ? ' open' : ''}`}></span>
+            <span className={`hamburger-line${menuOpen ? ' open' : ''}`}></span>
+            <span className={`hamburger-line${menuOpen ? ' open' : ''}`}></span>
+          </button>
         </div>
+        {/* Mobile Menu Overlay */}
+        {menuOpen && (
+          <div className="mobile-menu-overlay" onClick={() => setMenuOpen(false)}></div>
+        )}
       </header>
 
       {/* Hero Section */}
@@ -480,6 +498,3 @@ function App() {
 }
 
 export default App
-
-
-

@@ -2,7 +2,6 @@ import { useState } from 'react'
 import './App.css'
 
 function App() {
-  const [activeTab, setActiveTab] = useState('Dental Checkups');
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [modalContent, setModalContent] = useState(null);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -13,12 +12,6 @@ function App() {
     { name: "Emma Davis", feedback: "Very kid-friendly clinic. My daughter actually looks forward to her checkups now!", rating: 5, avatar: "https://i.pravatar.cc/150?u=emma" },
     { name: "James Wilson", feedback: "Professional, clean, and efficient. I was in and out for a cleaning in no time with zero discomfort.", rating: 4, avatar: "https://i.pravatar.cc/150?u=james" },
     { name: "Olivia Brown", feedback: "The staff is incredibly friendly. They explained everything clearly and made me feel at ease.", rating: 5, avatar: "https://i.pravatar.cc/150?u=olivia" },
-  ];
-
-  const blogPosts = [
-    { title: "The Secret to a Brighter Smile", date: "Oct 12, 2023", category: "Oral Health", img: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=2070&auto=format&fit=crop", content: "Maintaining a bright smile involves consistent hygiene and periodic professional whitening. Explore our top tips for diet and daily care..." },
-    { title: "Is Teeth Whitening Safe for Everyone?", date: "Nov 05, 2023", category: "Cosmetic", img: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=2034&auto=format&fit=crop", content: "Teeth whitening is generally safe but depends on your enamel health. We analyze common myths and clinical facts about modern whitening procedures..." },
-    { title: "Best Practices for Pediatric Care", date: "Dec 01, 2023", category: "Family", img: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=2080&auto=format&fit=crop", content: "Building positive dental habits early is crucial. Our specialists share their approach to making clinic visits fun and anxiety-free for kids..." },
   ];
 
   const openModal = (title, content) => {
@@ -54,7 +47,6 @@ function App() {
             <a href="#about" onClick={handleNavClick}>About</a>
             <a href="#team" onClick={handleNavClick}>Team</a>
             <a href="#testimonials" onClick={handleNavClick}>Reviews</a>
-            <a href="#blog" onClick={handleNavClick}>Blog</a>
             <a href="#contact" onClick={handleNavClick}>Contact</a>
           </nav>
           <button className="book-btn desktop-only" onClick={() => openModal('Book a Consultation', 'Fill out the form below or call us at +1 (555) 000-1111 to schedule your appointment.')}>
@@ -79,18 +71,18 @@ function App() {
 
       {/* Hero Section */}
       <section id="home" className="hero-section">
-        <div className="container hero-container-flex">
-          <div className="hero-content-left">
-            <div className="hero-badge">
+        <div className="container hero-container-overlay">
+          <div className="hero-content">
+            <div className="hero-badge fade-in">
               <span className="icon">🏆</span>
               <span className="badge-text">Australia's Most Trusted Dental Clinic</span>
             </div>
-            <h1>Your Smile Deserves<br />the Best in Australia.</h1>
-            <p className="hero-description">
-              Rated #1 across Sydney, Melbourne & Brisbane — our award-winning dental team delivers world-class care with cutting-edge technology. Over <strong>50,000 happy patients</strong> trust us for everything from routine checkups to full smile transformations.
+            <h1 className="fade-in">Your Smile Deserves<br />the Best in Australia.</h1>
+            <p className="hero-description fade-in">
+              Recognized for dental excellence, our team provides personalized care in a comfortable environment using advanced technology. We offer everything from routine checkups to complete smile transformations with precision and quality.
             </p>
 
-            <div className="hero-trust-stats">
+            <div className="hero-trust-stats fade-in">
               <div className="trust-stat">
                 <span className="trust-num">50K+</span>
                 <span className="trust-label">Happy Patients</span>
@@ -100,49 +92,13 @@ function App() {
                 <span className="trust-num">15+</span>
                 <span className="trust-label">Years of Excellence</span>
               </div>
-              <div className="trust-divider"></div>
-              <div className="trust-stat">
-                <span className="trust-num">4.9★</span>
-                <span className="trust-label">Google Rating</span>
-              </div>
             </div>
 
-            <div className="hero-cta-row">
+            <div className="hero-cta-row fade-in">
               <button className="book-btn contact-us-btn" onClick={() => document.getElementById('contact').scrollIntoView()}>
                 Book Free Consultation
                 <span className="arrow-circle">↗</span>
               </button>
-              <div className="expert-doctors-badge">
-                <div className="avatar-stack">
-                  <img src="https://i.pravatar.cc/150?u=1" alt="doc" />
-                  <img src="https://i.pravatar.cc/150?u=2" alt="doc" />
-                  <img src="https://i.pravatar.cc/150?u=3" alt="doc" />
-                  <div className="more-count">15+</div>
-                </div>
-                <p>Expert Dentists for you</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="hero-content-right">
-            <div className="hero-image-wrapper">
-              <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=2024&auto=format&fit=crop" alt="Dental Patient" className="hero-main-img" />
-
-              <div className="status-badge badge-1">
-                <span className="badge-icon">🦷</span>
-                <span className="badge-name">Teeth Cleaning</span>
-                <span className="badge-check">✔️</span>
-              </div>
-              <div className="status-badge badge-2">
-                <span className="badge-icon">✨</span>
-                <span className="badge-name">Whitening</span>
-                <span className="badge-circle"></span>
-              </div>
-              <div className="status-badge badge-3">
-                <span className="badge-icon">🦷</span>
-                <span className="badge-name">Lost Filling</span>
-                <span className="badge-circle"></span>
-              </div>
             </div>
           </div>
         </div>
@@ -151,14 +107,12 @@ function App() {
       {/* Services Section */}
       <section id="services" className="services-section section-padding">
         <div className="container">
-          <div className="section-header">
-            <span className="sur-title"> dental services /</span>
-            <div className="section-title">
-              <h2>DISCOVER OUR SIGNATURE<br />DENTAL SERVICES</h2>
-              <p style={{ maxWidth: '400px', fontSize: '14px', color: 'var(--text-muted)' }}>
-                Experience modern dental care delivered with comfort, precision, and attention to detail. Our clinic provides a calm, welcoming environment.
-              </p>
-            </div>
+          <div className="section-header centered-header">
+            <span className="sur-title"> dental services</span>
+            <h2>DISCOVER OUR SIGNATURE<br />DENTAL SERVICES</h2>
+            <p style={{ maxWidth: '600px', margin: '20px auto', fontSize: '16px', color: 'var(--text-muted)' }}>
+              Experience modern dental care delivered with comfort, precision, and attention to detail. Our clinic provides a calm, welcoming environment.
+            </p>
           </div>
 
           <div className="services-grid">
@@ -182,54 +136,69 @@ function App() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="about-section section-padding">
-        <div className="container about-grid">
-          <div className="about-images">
-            <div className="about-img-main">
-              <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=2024&auto=format&fit=crop" alt="Clinic Interior" />
-            </div>
-            <div className="about-img-sub">
-              <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=2034&auto=format&fit=crop" alt="Consultation" />
-            </div>
-            <div className="experience-badge">
-              <h3>15+</h3>
-              <p>Years of Excellence</p>
-            </div>
-          </div>
-          <div className="about-content">
-            <span className="sur-title">About Us /</span>
+      < section id="about" className="about-section section-padding">
+        <div className="container">
+
+          {/* 🔥 TOP CENTER HEADER */}
+          <div className="about-header centered-header">
+            <span className="sur-title">About Us</span>
             <h2>WE ARE COMMITTED TO PROVIDING THE BEST DENTAL CARE</h2>
-            <p className="about-text">
-              Our clinic has been at the forefront of dental innovation for over 15 years. We believe that every patient deserves a smile they are proud of, and we work tirelessly to achieve that through personalized treatments and a compassionate approach.
-            </p>
-            <div className="about-highlights">
-              <div className="highlight-item">
-                <div className="highlight-icon">⭐</div>
-                <div>
-                  <h4>State-of-the-Art Tech</h4>
-                  <p>We use the latest digital tools for precision diagnosis.</p>
+          </div>
+
+          {/* GRID START */}
+          <div className="about-grid">
+
+            {/* LEFT IMAGE */}
+            <div className="about-images">
+              <div className="about-img-main">
+                <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=2024&auto=format&fit=crop" alt="Clinic Interior" />
+              </div>
+
+              <div className="experience-badge">
+                <h3>15+</h3>
+                <p>Years of Excellence</p>
+              </div>
+            </div>
+
+            {/* RIGHT CONTENT */}
+            <div className="about-content">
+              <p className="about-text">
+                Our clinic has proudly led the way in dental innovation for more than 2 years. Committed to excellence, we strive to create a welcoming environment where every patient feels valued and cared for. We believe that a confident smile is the foundation of personal well-being, which is why we offer personalized dental treatments tailored to each individual’s unique needs. Combining advanced technology with a gentle, compassionate approach, our team is dedicated to helping you achieve and maintain optimal oral health throughout your life.
+              </p>
+
+              <div className="about-highlights">
+                <div className="highlight-item">
+                  <div className="highlight-icon">⭐</div>
+                  <div>
+                    <h4>State-of-the-Art Tech</h4>
+                    <p>We use the latest tools for precision diagnosis.</p>
+                  </div>
+                </div>
+
+                <div className="highlight-item">
+                  <div className="highlight-icon">👩‍⚕️</div>
+                  <div>
+                    <h4>Expert Specialists</h4>
+                    <p>Experienced and internationally trained doctors.</p>
+                  </div>
                 </div>
               </div>
-              <div className="highlight-item">
-                <div className="highlight-icon">👩‍⚕️</div>
-                <div>
-                  <h4>Expert Specialists</h4>
-                  <p>Our team consists of internationally recognized doctors.</p>
+
+              <div className="about-actions">
+                <button className="book-btn">
+                  Learn More About Us
+                </button>
+
+                <div className="working-hours-box">
+                  <span className="icon">🕒</span>
+                  <div>
+                    <strong>Working hours :</strong>
+                    <p>Mon - Fri : 9am - 5pm</p>
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="about-actions">
-              <button className="book-btn" onClick={() => openModal('Our Story', 'Founded in 2008, our clinic has served over 50,000 happy patients. We pride ourselves on combining artistic precision with clinical excellence.')}>
-                Learn More About Us
-              </button>
-              <div className="working-hours-box">
-                <span className="icon">🕒</span>
-                <div>
-                  <strong>Working hours :</strong>
-                  <p>Mon - Fri : 9am - 5pm</p>
-                </div>
-              </div>
-            </div>
+
           </div>
         </div>
       </section>
@@ -237,8 +206,8 @@ function App() {
       {/* Why Choose Us */}
       <section className="why-us-section section-padding" style={{ background: 'var(--primary)', color: 'white' }}>
         <div className="container">
-          <div className="section-header" style={{ textAlign: 'center', marginBottom: '60px' }}>
-            <span className="sur-title" style={{ color: 'var(--accent)' }}>Why Us /</span>
+          <div className="section-header centered-header">
+            <span className="sur-title" style={{ color: 'var(--accent)' }}>Why Us</span>
             <h2 style={{ color: 'white' }}>WHAT SETS US APART</h2>
           </div>
           <div className="why-grid">
@@ -261,19 +230,16 @@ function App() {
       {/* Team Section */}
       <section id="team" className="team-section section-padding">
         <div className="container">
-
-          <div className="section-header center-header">
-            <span className="sur-title">Meet /</span>
-            <div className="section-title">
-              <h2>THE PROFESSIONALS<br />BEHIND YOUR SMILE</h2>
-            </div>
+          <div className="section-header centered-header">
+            <span className="sur-title">Meet</span>
+            <h2>THE PROFESSIONALS BEHIND YOUR SMILE</h2>
           </div>
 
           <div className="team-grid">
             {[
-              { name: 'Cameron Williamson', role: 'Oral Surgery Fellowship', rating: '4.9', img: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=1964&auto=format&fit=crop' },
-              { name: 'Annette Black', role: 'Pedodontics (Children Dentistry)', rating: '5.0', img: 'https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=1974&auto=format&fit=crop' },
-              { name: 'Jenny Wilson', role: 'Conservative Dentistry', rating: '4.8', img: 'https://images.unsplash.com/photo-1537368910025-700350fe46c7?q=80&w=2070&auto=format&fit=crop' }
+              { name: 'Cameron Williamson', role: 'Oral Surgery Fellowship', rating: '4.9', img: '/member1.png' },
+              { name: 'Annette Black', role: 'Pedodontics (Children Dentistry)', rating: '5.0', img: '/member2.png' },
+              { name: 'Jenny Wilson', role: 'Conservative Dentistry', rating: '4.8', img: '/member3.png' },
             ].map((doc, i) => (
               <div key={i} className="team-card">
                 <div className="team-img-wrapper">
@@ -294,109 +260,75 @@ function App() {
         </div>
       </section>
 
-      {/* Testimonials Section with Marquee */}
+      {/* Testimonials Section */}
       <section id="testimonials" className="testimonials-section section-padding">
         <div className="container">
-          <div className="section-header" style={{ textAlign: 'center', marginBottom: '80px' }}>
-            <span className="sur-title">Feedback /</span>
-            <h2 style={{ fontSize: '25px' }}>WHAT OUR PATIENTS SAY</h2>
+          <div className="section-header centered-header">
+            <span className="sur-title">Feedback</span>
+            <h2>WHAT OUR PATIENTS SAY</h2>
           </div>
-        </div>
 
-        <div className="marquee-container">
-          <div className="marquee">
-            {[...testimonials, ...testimonials].map((t, i) => (
-              <div key={i} className="feedback-card">
-                <div className="quote-icon">"</div>
-                <p className="feedback-text">{t.feedback}</p>
-                <div className="feedback-footer">
-                  <img src={t.avatar} alt={t.name} className="feedback-avatar" />
-                  <div>
-                    <div className="feedback-name">{t.name}</div>
-                    <div className="feedback-rating">{'★'.repeat(t.rating)}</div>
+          <div className="marquee-container">
+            <div className="marquee">
+              {[...testimonials, ...testimonials].map((t, i) => (
+                <div key={i} className="feedback-card">
+                  <div className="quote-icon">"</div>
+
+                  <p className="feedback-text">{t.feedback}</p>
+
+                  <div className="feedback-footer">
+
+                    {/* ✅ AVATAR WITH FIRST LETTER */}
+                    <div className="avatar-wrapper">
+                      <div
+                        className="avatar-initial"
+                        style={{ background: `hsl(${i * 60}, 70%, 50%)` }}
+                      >
+                        {t.name.charAt(0)}
+                      </div>
+                    </div>
+
+                    <div>
+                      <div className="feedback-name">{t.name}</div>
+                      <div className="feedback-rating">
+                        {'★'.repeat(t.rating)}
+                      </div>
+                    </div>
+
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Blog Section */}
-      <section id="blog" className="blog-section section-padding">
-        <div className="container">
-          <div className="section-header">
-            <span className="sur-title">Latest Updates /</span>
-            <h2>OUR DENTAL INSIGHTS</h2>
-          </div>
-          <div className="blog-grid">
-            {blogPosts.map((post, i) => (
-              <div key={i} className="blog-card">
-                <div className="blog-img-wrapper">
-                  <img src={post.img} alt={post.title} className="blog-img" />
-                </div>
-                <div className="blog-content">
-                  <span className="blog-category">{post.category}</span>
-                  <h3 className="blog-title">{post.title}</h3>
-                  <div className="blog-footer">
-                    <span>{post.date}</span>
-                    <button className="read-more" onClick={() => openModal(post.title, post.content)}>Read More ↗</button>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Modal Popup */}
-      {modalContent && (
-        <div className="modal-overlay" onClick={closeModal}>
-          <div className="modal-card" onClick={e => e.stopPropagation()}>
-            <button className="modal-close" onClick={closeModal}>×</button>
-            <div className="modal-content">
-              <h2>{modalContent.title}</h2>
-              <p>{modalContent.content}</p>
-              {modalContent.title === 'Book a Consultation' && (
-                <button className="book-btn" style={{ marginTop: '20px', width: '100%', justifyContent: 'center' }} onClick={closeModal}>Got It</button>
-              )}
+              ))}
             </div>
           </div>
         </div>
-      )}
+      </section>
 
       {/* Contact Section */}
       <section id="contact" className="contact-section section-padding">
         <div className="container contact-container">
           <div className="contact-info center-header">
-            <span className="sur-title">Get in Touch /</span>
-            <h2>
-              READY TO TRANSFORM<br />
-              YOUR <span className="text-accent">SMILE</span>?
-            </h2>
-            <p>
-              Our friendly team is here to answer all your questions and help you schedule your first visit.
-            </p>
+            <span className="sur-title">Get in Touch</span>
+            <h2>READY TO TRANSFORM YOUR SMILE?</h2>
             <div className="contact-details">
               <div className="contact-item">
                 <span className="icon">📍</span>
                 <div>
                   <h4>Location</h4>
-                  <p>123 Dental Street, Suite 500, City</p>
+                  <p>456 Collins St, Melbourne, VIC 3000, Australia</p>
                 </div>
               </div>
               <div className="contact-item">
                 <span className="icon">📞</span>
                 <div>
                   <h4>Phone</h4>
-                  <p>+1 (555) 000-1111</p>
+                  <p>+61 (0) 3 9555 1111</p>
                 </div>
               </div>
               <div className="contact-item">
                 <span className="icon">✉️</span>
                 <div>
                   <h4>Email</h4>
-                  <p>hello@dentalsmile.com</p>
+                  <p>hello@dentalsmile.com.au</p>
                 </div>
               </div>
             </div>
@@ -430,7 +362,7 @@ function App() {
       </section>
 
       {/* Footer */}
-      <footer className="footer section-padding">
+      <footer className="footer footer-compact">
         <div className="container">
           <div className="footer-grid">
             <div className="footer-brand">
@@ -439,72 +371,62 @@ function App() {
                 Dental
               </div>
               <p className="footer-desc">
-                Providing world-class dental care with a gentle touch. Our mission is to combine state-of-the-art technology with compassionate service to give you the smile you deserve.
+                Providing world-class dental care with a gentle, patient-first approach.
+                We combine advanced technology with compassionate treatment to ensure comfort and precision.
+                Our goal is to help you achieve a healthy, confident smile with ease.
               </p>
-              <div className="social-links" style={{ marginTop: '30px' }}>
-                <a href="#" className="social-icon">FB</a>
-                <a href="#" className="social-icon">IG</a>
-                <a href="#" className="social-icon">TW</a>
-                <a href="#" className="social-icon">LN</a>
-              </div>
             </div>
 
             <div className="footer-col">
               <h3>Quick Links</h3>
               <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#team">Our Team</a></li>
-                <li><a href="#blog">Latest News</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
                 <li><a href="#contact">Contact</a></li>
               </ul>
             </div>
 
             <div className="footer-col">
-              <h3>Our Services</h3>
+              <h3>Services</h3>
               <ul>
                 <li><a href="#services">Teeth Cleaning</a></li>
-                <li><a href="#services">Teeth Whitening</a></li>
-                <li><a href="#services">Dental Checkups</a></li>
+                <li><a href="#services">Checkups</a></li>
                 <li><a href="#services">Oral Surgery</a></li>
-                <li><a href="#services">Dental Fillings</a></li>
               </ul>
             </div>
 
             <div className="footer-col">
-              <h3>Contact Info</h3>
-              <ul className="footer-contact-list">
-                <li>
-                  <strong>📍 Address:</strong><br />
-                  123 Dental St, Suite 500,<br />
-                  New York, NY 10001
-                </li>
-                <li>
-                  <strong>📞 Phone:</strong><br />
-                  +1 (555) 000-1111
-                </li>
-                <li>
-                  <strong>✉️ Email:</strong><br />
-                  hello@dentalsmile.com
-                </li>
-                <li>
-                  <strong>🕒 Working Hours:</strong><br />
-                  Mon - Fri: 9am - 5pm
-                </li>
-              </ul>
+              <h3>Contact</h3>
+              <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '13px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                <span><strong>📍 Location:</strong> 456 Collins St, Melbourne, VIC 3000, Australia</span>
+                <span><strong>📞 Phone:</strong> +61 (0) 3 9555 1111</span>
+                <span><strong>✉️ Email:</strong> hello@dentalsmile.com.au</span>
+              </p>
             </div>
           </div>
 
-          <div className="footer-bottom">
+          <div className="footer-bottom centered-footer">
             <p>&copy; 2023 Dental Care Clinic. All rights reserved.</p>
-            <div className="footer-legal">
-              <a href="#">Privacy Policy</a>
-              <a href="#">Terms of Service</a>
-            </div>
           </div>
         </div>
       </footer>
-    </div>
+
+      {/* Modal Popup */}
+      {
+        modalContent && (
+          <div className="modal-overlay" onClick={closeModal}>
+            <div className="modal-card" onClick={e => e.stopPropagation()}>
+              <button className="modal-close" onClick={closeModal}>×</button>
+              <div className="modal-content">
+                <h2>{modalContent.title}</h2>
+                <p>{modalContent.content}</p>
+              </div>
+            </div>
+          </div>
+        )
+      }
+    </div >
   )
 }
 

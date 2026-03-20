@@ -117,7 +117,7 @@ function App() {
 
           <div className="services-grid">
             {[
-              { title: 'Teeth Cleaning', desc: 'Professional cleaning for a healthier smile.', img: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=2070&auto=format&fit=crop', details: 'Our professional cleaning involves plaque removal, scaling, and polishing to ensure your gums stay healthy and your teeth shine.' },
+              { title: 'Teeth Cleaning', desc: 'Professional cleaning for a healthier smile.', img: '/service_1.jpg', details: 'Our professional cleaning involves plaque removal, scaling, and polishing to ensure your gums stay healthy and your teeth shine.' },
               { title: 'Dental Checkups', desc: 'Regular exams to keep your teeth in top shape.', img: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=2024&auto=format&fit=crop', details: 'Full diagnostic exams including digital X-rays and early screening for cavities or gum disease.' },
               { title: 'Dental Veneers', desc: 'Aesthetic improvements for a perfect look.', img: 'https://images.unsplash.com/photo-1598256989800-fe5f95da9787?q=80&w=2070&auto=format&fit=crop', details: 'Custom-made shells designed to cover the front surface of teeth to improve your appearance.' },
               { title: 'Oral Surgery', desc: 'Safe and effective surgical procedures.', img: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=2080&auto=format&fit=crop', details: 'Specialized surgical treatments for complex dental issues with a focus on patient comfort.' }

@@ -90,6 +90,21 @@ function App() {
             <a href="#contact" onClick={handleNavClick}>
               Contact
             </a>
+            <div className="nav-booking-mobile">
+              <button
+                className="book-btn"
+                onClick={() => {
+                  handleNavClick();
+                  openModal(
+                    "Book a Consultation",
+                    "Fill out the form below or call us at +1 (555) 000-1111 to schedule your appointment.",
+                  );
+                }}
+              >
+                Book a call
+                <span>→</span>
+              </button>
+            </div>
           </nav>
           <button
             className="book-btn desktop-only"

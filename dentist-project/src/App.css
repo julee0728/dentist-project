@@ -258,6 +258,10 @@ html {
   transform: translateY(0) scale(0.95);
 }
 
+.nav-booking-mobile {
+  display: none;
+}
+
 /* Redesigned Hero Section */
 .hero-section {
   position: relative;
@@ -1561,6 +1565,16 @@ html {
 
   .nav-links a::after {
     display: none;
+  }
+
+  .nav-booking-mobile {
+    display: block;
+    padding: 24px 30px;
+  }
+
+  .nav-booking-mobile .book-btn {
+    width: 100%;
+    justify-content: center;
   }
 
   .mobile-menu-overlay {

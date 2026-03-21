@@ -161,11 +161,11 @@ function App() {
 
             <div className="hero-trust-stats fade-in">
               <div className="trust-stat">
-                <span className="trust-num">50K+</span>
+                <span className="trust-num">2K+</span>
                 <span className="trust-label">Happy Patients</span>
               </div>
               <div className="trust-stat">
-                <span className="trust-num">15+</span>
+                <span className="trust-num">5+</span>
                 <span className="trust-label">Years of Excellence</span>
               </div>
             </div>

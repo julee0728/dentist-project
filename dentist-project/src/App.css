@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@100..900&display=swap");
+
 :root {
   --primary: #0f172a;
   --accent: #2dd4bf;
@@ -58,7 +60,30 @@
 }
 
 .fade-in {
-  animation: fadeInUp 0.8s ease-out forwards;
+  animation: fadeInUp 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+@keyframes titleReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+    filter: blur(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes badgePulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
 }
 
 section {
@@ -324,15 +349,51 @@ html {
   font-weight: 600;
   color: white;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  animation: titleReveal 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  animation-delay: 0.1s;
+  opacity: 0;
 }
 
 .hero-content h1 {
-  font-size: 30px;
-  font-weight: 800;
+  font-family: "DM Serif Display", serif;
+  font-size: 50px;
+  font-weight: 400;
   color: white;
-  line-height: 1.1;
+  line-height: 1;
   margin-bottom: 25px;
-  letter-spacing: -1px;
+  letter-spacing: -2px;
+}
+
+@keyframes typeLine {
+  from {
+    clip-path: inset(-20px 100% -20px -20px);
+  }
+  to {
+    clip-path: inset(-20px -20px -20px -20px);
+  }
+}
+
+.title-line {
+  display: inline-block;
+  clip-path: inset(-20px 100% -20px -20px);
+  white-space: nowrap;
+}
+
+.line-1 {
+  animation: typeLine 0.7s steps(14, end) 0.3s forwards;
+}
+
+.line-2 {
+  animation: typeLine 0.7s steps(14, end) 1s forwards;
+}
+
+.line-3 {
+  animation: typeLine 0.6s steps(11, end) 1.7s forwards;
+}
+
+.title-accent-italic {
+  color: var(--accent);
+  font-style: italic;
 }
 
 .hero-description {
@@ -341,6 +402,9 @@ html {
   line-height: 1.7;
   margin-bottom: 35px;
   max-width: 600px;
+  animation: titleReveal 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  animation-delay: 2.3s;
+  opacity: 0;
 }
 
 /* Hero Trust Stats */
@@ -357,6 +421,9 @@ html {
   border: 1px solid rgba(255, 255, 255, 0.1);
   width: fit-content;
   text-align: center;
+  animation: fadeInUp 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  animation-delay: 2.5s;
+  opacity: 0;
 }
 
 .trust-stat {
@@ -401,6 +468,9 @@ html {
   padding: 16px 36px;
   color: white;
   box-shadow: 0 10px 25px rgba(45, 212, 191, 0.4);
+  animation: fadeInUp 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  animation-delay: 2.7s;
+  opacity: 0;
 }
 
 .contact-us-btn:hover {
@@ -1608,8 +1678,10 @@ html {
     padding-left: 0;
   }
 
-  .hero-content-left h1 {
-    font-size: 20px;
+  .hero-content-left h1,
+  .hero-content h1 {
+    font-size: 40px !important;
+    line-height: 1.1;
   }
 
   .hero-description {

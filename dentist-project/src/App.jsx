@@ -139,12 +139,12 @@ function App() {
                 FOR DENTAL PRACTICES IN SYDNEY, MELBOURNE & BRISBANE
               </span>
             </div>
-            <h1 className="fade-in">
-              More patients.
+            <h1 className="hero-title-animated fade-in">
+              <span className="title-line line-1">More patients.</span>
               <br />
-              Less guessing.
+              <span className="title-line line-2 title-accent-italic">Less guessing.</span>
               <br />
-              Guaranteed.
+              <span className="title-line line-3">Guaranteed.</span>
             </h1>
             <p className="hero-description fade-in">
               We help independent dental clinics dominate local Google search,

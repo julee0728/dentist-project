@@ -162,7 +162,7 @@ html {
 
 .nav-links a {
   font-weight: 500;
-  font-size: 22px;
+  font-size: 14px;
   color: var(--primary);
   opacity: 0.8;
   padding: 5px 0;
@@ -235,11 +235,11 @@ html {
 .book-btn {
   background: var(--primary);
   color: white;
-  padding: 12px 28px;
+  padding: 8px 20px;
   border-radius: 100px;
   font-weight: 600;
   text-transform: uppercase;
-  font-size: 14px;
+  font-size: 12px;
   letter-spacing: 0.5px;
   display: flex;
   align-items: center;
@@ -1671,6 +1671,11 @@ html {
     text-align: center;
   }
 
+  .footer-bottom p {
+    font-size: 10px;
+    margin: 0;
+  }
+
   .contact-container {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -1703,6 +1708,21 @@ html {
   .hero-cta-row {
     flex-direction: column;
     gap: 15px;
+    width: 100%;
+    align-items: center;
+  }
+
+  .no-lock-in {
+    text-align: center;
+    width: 100%;
+  }
+
+  .contact-us-btn {
+    font-size: 14px !important;
+    padding: 12px 20px !important;
+    white-space: nowrap;
+    width: auto !important;
+    min-width: fit-content;
   }
 
   .hero-content-left h1 {
@@ -1888,6 +1908,9 @@ html {
   .contact-us-btn {
     width: 100%;
     justify-content: center;
+    font-size: 12px !important;
+    padding: 12px 10px !important;
+    white-space: nowrap;
   }
 
   .why-card {
